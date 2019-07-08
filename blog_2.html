@@ -14,7 +14,7 @@
  <div class="col-md-8">
   <h3>Altair to the Rescue</h3>
   <label>2019-07-07</label>
-  <h2>Bad charts made better: A beginner-friendly altair tutorial</h2>
+  <h3>Bad charts made better: A beginner-friendly altair tutorial</h3>
 <p>Some charts are confusing, some hard to interpret, and others are just boring, while still others (albeit a special, minority few) require that the rules of math and logic break in order to establish a reality in which they make sense&mdash;though at first glance, they might not appear as pernicious as they really are. By manipulating data, not only is it possible to tell a story, but to frame it in a way that fits a particular narrative. How we choose to represent data visually is of the utmost importance as a data scientist, of course, but also as anyone who needs to depict information in a meaningful way.</p>
 <p>In this blog, I'll take some bad charts (boring, misleading, logic-breaking, etc.) and remake them into their best selves. </p>
 <p>But first, I'll go over the basics of Altair, walking through the first few steps needed to create a visualization. </p>
@@ -27,20 +27,20 @@
 
 <h2>✨Before &amp; Afters ✨</h2>
 <p><tr>
-    <td> <img src="images/donut-complaints.png" alt="Drawing" style="width: 300px;"/> </td>
-    <td> <img src="images/complaints.svg" alt="Drawing" style="width: 650px;"/> </td>
+    <td> <img src="images\donut-complaints.png" alt="Drawing" style="width: 300px;"/> </td>
+    <td> <img src="images\complaints.svg" alt="Drawing" style="width: 650px;"/> </td>
     </tr></p>
 <p><tr>
-    <td> <img src="images/ghg-emissions.jpeg" alt="Drawing" style="width: 600px;"/> </td>
-    <td> <img src="images/emissions-1.svg" alt="Drawing" style="width: 700px;"/> </td>
+    <td> <img src="images\ghg-emissions.jpeg" alt="Drawing" style="width: 600px;"/> </td>
+    <td> <img src="images\emissions-1.svg" alt="Drawing" style="width: 700px;"/> </td>
     </tr></p>
 <p><tr>
-    <td> <img src="images/aul-fakenews.jpeg" alt="Drawing" style="width: 500px;"/> </td>
-    <td> <img src="images/pp-visualization.svg" alt="Drawing" style="width: 500px;"/> </td>
+    <td> <img src="images\aul-fakenews.jpeg" alt="Drawing" style="width: 500px;"/> </td>
+    <td> <img src="images\pp-visualization.svg" alt="Drawing" style="width: 500px;"/> </td>
     </tr></p>
 <p>The "bad" chart depicting Ontario's greenhouse gas emissions might actually look a bit prettier than the one I made, but it's not the better viz. Read why below. </p>
 <h2>Making bar charts in Altair</h2>
-<p><img src="images/donut-complaints.png" alt="Drawing" style="width: 400px;"/> </p>
+<p><img src="images\donut-complaints.png" alt="Drawing" style="width: 400px;"/> </p>
 <p><em>This graphic is a breakdown of the discrimination complaints received by the Canadian Human Rights Commission in 2017-18. In that year, disability complaints represented 59% of complaints while 41% of complaints were other.</em> (From the 2018 Federal budget)</p>
 <p>Humans aren't great at estimating area or visual divisions of area. A donut chart just isn't a great way to compare two proportions visually&mdash;a bar chart works much better. </p>
 <h4>The easiest way to fix this is to spin up a super simple dataset representing these data.</h4>

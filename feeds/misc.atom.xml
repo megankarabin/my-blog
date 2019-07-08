@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Hydra - misc</title><link href="https://thelinguist12.github.io/my-blog/" rel="alternate"></link><link href="https://thelinguist12.github.io/my-blog/feeds/misc.atom.xml" rel="self"></link><id>https://thelinguist12.github.io/my-blog/</id><updated>2019-07-07T08:00:00-04:00</updated><entry><title>Altair to the Rescue</title><link href="https://thelinguist12.github.io/my-blog/blog_2.html" rel="alternate"></link><published>2019-07-07T08:00:00-04:00</published><updated>2019-07-07T08:00:00-04:00</updated><author><name>Megan Karabin</name></author><id>tag:thelinguist12.github.io,2019-07-07:/my-blog/blog_2.html</id><summary type="html">&lt;h2&gt;Bad charts made better: A beginner-friendly altair tutorial&lt;/h2&gt;
-&lt;p&gt;Some charts are confusing, some hard to interpret, and others are just boring, while still others (albeit a special, minority few) require that the rules of math and logic break in order to establish a reality in which they make sense&amp;mdash;though …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Bad charts made better: A beginner-friendly altair tutorial&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Hydra - misc</title><link href="https://thelinguist12.github.io/my-blog/" rel="alternate"></link><link href="https://thelinguist12.github.io/my-blog/feeds/misc.atom.xml" rel="self"></link><id>https://thelinguist12.github.io/my-blog/</id><updated>2019-07-07T08:00:00-04:00</updated><entry><title>Altair to the Rescue</title><link href="https://thelinguist12.github.io/my-blog/blog_2.html" rel="alternate"></link><published>2019-07-07T08:00:00-04:00</published><updated>2019-07-07T08:00:00-04:00</updated><author><name>Megan Karabin</name></author><id>tag:thelinguist12.github.io,2019-07-07:/my-blog/blog_2.html</id><summary type="html">&lt;h3&gt;Bad charts made better: A beginner-friendly altair tutorial&lt;/h3&gt;
+&lt;p&gt;Some charts are confusing, some hard to interpret, and others are just boring, while still others (albeit a special, minority few) require that the rules of math and logic break in order to establish a reality in which they make sense&amp;mdash;though …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Bad charts made better: A beginner-friendly altair tutorial&lt;/h3&gt;
 &lt;p&gt;Some charts are confusing, some hard to interpret, and others are just boring, while still others (albeit a special, minority few) require that the rules of math and logic break in order to establish a reality in which they make sense&amp;mdash;though at first glance, they might not appear as pernicious as they really are. By manipulating data, not only is it possible to tell a story, but to frame it in a way that fits a particular narrative. How we choose to represent data visually is of the utmost importance as a data scientist, of course, but also as anyone who needs to depict information in a meaningful way.&lt;/p&gt;
 &lt;p&gt;In this blog, I'll take some bad charts (boring, misleading, logic-breaking, etc.) and remake them into their best selves. &lt;/p&gt;
 &lt;p&gt;But first, I'll go over the basics of Altair, walking through the first few steps needed to create a visualization. &lt;/p&gt;
@@ -13,20 +13,20 @@
 
 &lt;h2&gt;✨Before &amp;amp; Afters ✨&lt;/h2&gt;
 &lt;p&gt;&lt;tr&gt;
-    &lt;td&gt; &lt;img src="images/donut-complaints.png" alt="Drawing" style="width: 300px;"/&gt; &lt;/td&gt;
-    &lt;td&gt; &lt;img src="images/complaints.svg" alt="Drawing" style="width: 650px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\donut-complaints.png" alt="Drawing" style="width: 300px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\complaints.svg" alt="Drawing" style="width: 650px;"/&gt; &lt;/td&gt;
     &lt;/tr&gt;&lt;/p&gt;
 &lt;p&gt;&lt;tr&gt;
-    &lt;td&gt; &lt;img src="images/ghg-emissions.jpeg" alt="Drawing" style="width: 600px;"/&gt; &lt;/td&gt;
-    &lt;td&gt; &lt;img src="images/emissions-1.svg" alt="Drawing" style="width: 700px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\ghg-emissions.jpeg" alt="Drawing" style="width: 600px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\emissions-1.svg" alt="Drawing" style="width: 700px;"/&gt; &lt;/td&gt;
     &lt;/tr&gt;&lt;/p&gt;
 &lt;p&gt;&lt;tr&gt;
-    &lt;td&gt; &lt;img src="images/aul-fakenews.jpeg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
-    &lt;td&gt; &lt;img src="images/pp-visualization.svg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\aul-fakenews.jpeg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\pp-visualization.svg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
     &lt;/tr&gt;&lt;/p&gt;
 &lt;p&gt;The "bad" chart depicting Ontario's greenhouse gas emissions might actually look a bit prettier than the one I made, but it's not the better viz. Read why below. &lt;/p&gt;
 &lt;h2&gt;Making bar charts in Altair&lt;/h2&gt;
-&lt;p&gt;&lt;img src="images/donut-complaints.png" alt="Drawing" style="width: 400px;"/&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src="images\donut-complaints.png" alt="Drawing" style="width: 400px;"/&gt; &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;This graphic is a breakdown of the discrimination complaints received by the Canadian Human Rights Commission in 2017-18. In that year, disability complaints represented 59% of complaints while 41% of complaints were other.&lt;/em&gt; (From the 2018 Federal budget)&lt;/p&gt;
 &lt;p&gt;Humans aren't great at estimating area or visual divisions of area. A donut chart just isn't a great way to compare two proportions visually&amp;mdash;a bar chart works much better. &lt;/p&gt;
 &lt;h4&gt;The easiest way to fix this is to spin up a super simple dataset representing these data.&lt;/h4&gt;
