@@ -12,14 +12,17 @@
 
 
 &lt;h2&gt;✨Before &amp;amp; Afters ✨&lt;/h2&gt;
+&lt;h4&gt;Chart 1&lt;/h4&gt;
 &lt;p&gt;&lt;tr&gt;
-    &lt;td&gt; &lt;img src="images\donut-complaints.png" alt="Drawing" style="width: 300px;"/&gt; &lt;/td&gt;
-    &lt;td&gt; &lt;img src="images\complaints.svg" alt="Drawing" style="width: 650px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\images\donut-complaints.png" alt="Drawing" style="width: 300px;"/&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;img src="images\images\complaints.svg" alt="Drawing" style="width: 650px;"/&gt; &lt;/td&gt;
     &lt;/tr&gt;&lt;/p&gt;
+&lt;h4&gt;Chart 2&lt;/h4&gt;
 &lt;p&gt;&lt;tr&gt;
     &lt;td&gt; &lt;img src="images\ghg-emissions.jpeg" alt="Drawing" style="width: 600px;"/&gt; &lt;/td&gt;
     &lt;td&gt; &lt;img src="images\emissions-1.svg" alt="Drawing" style="width: 700px;"/&gt; &lt;/td&gt;
     &lt;/tr&gt;&lt;/p&gt;
+&lt;h4&gt;Chart 3&lt;/h4&gt;
 &lt;p&gt;&lt;tr&gt;
     &lt;td&gt; &lt;img src="images\aul-fakenews.jpeg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
     &lt;td&gt; &lt;img src="images\pp-visualization.svg" alt="Drawing" style="width: 500px;"/&gt; &lt;/td&gt;
@@ -89,7 +92,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_16_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_19_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Here's a quick breakdown of what's happening here:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;alt.Chart(df)&lt;/code&gt; specifies the data you want to use in your chart (where df = your pandas dataframe)&lt;/p&gt;
@@ -113,7 +116,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_19_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_22_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;To set a particular colour scheme, use &lt;code&gt;scale=alt.Scale(scheme='scheme name')&lt;/code&gt; in the &lt;code&gt;alt.Color&lt;/code&gt; method. &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Color&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;complaint type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;scale&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Scale&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scheme&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;reds&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; 
 
@@ -129,7 +132,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_21_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_24_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Here are a few more single-hue colour schemes:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;teals&lt;/li&gt;
@@ -173,7 +176,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_28_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_31_2.png"&gt;&lt;/p&gt;
 &lt;h3&gt;Specifying axis information&lt;/h3&gt;
 &lt;p&gt;We use &lt;code&gt;alt.X()&lt;/code&gt; when we want to encode more than just the column name&amp;mdash;maybe we want to include an axis title, formatting (e.g., displaying as percentage, adjusting scale), labels and ticks, etc. &lt;/p&gt;
 &lt;p&gt;To add formatting and set the axis title, I'll use &lt;code&gt;alt.Axis()&lt;/code&gt; with the arguments "format", which sets the text formatting pattern, and "title" (as shown in the following code). I like to keep the code in the chart specification as clean as possible, so I prefer building up this extra information outside of the &lt;code&gt;alt.Chart()&lt;/code&gt; function. I'll assign &lt;code&gt;alt.Axis(format='%', title='percentage of total complaints')&lt;/code&gt; to a variable called &lt;code&gt;x_axis&lt;/code&gt; so that I can simply call it from within &lt;code&gt;alt.X()&lt;/code&gt; and pass it as the axis argument. &lt;/p&gt;
@@ -223,7 +226,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_37_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_40_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Voilà! Now this data is truly living its best life. &lt;/p&gt;
 &lt;h2&gt;Line charts&lt;/h2&gt;
 &lt;p&gt;&lt;img src='images/ghg-emissions.jpeg' style="width: 700px;"&gt;&lt;/p&gt;
@@ -288,7 +291,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_47_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_50_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;As we can see, Ontario is actually still producing a far greater quantity of emissions than any other province except for Alberta. The following is the text accompanying the original chart:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Ontario has been a leader in the efforts to tackle climate change. Compared with 2005, the province’s total greenhouse gas emissions have dropped by 22 per cent — even while the rest of Canada saw emissions increase by three per cent during the same time period.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;In splitting the data this way (Ontario vs. the rest of Canada) the trend observed for "the rest of Canada" is highly influenced by Alberta's emissions. That is, the only reason the rest of Canada saw a 3% increase in emissions is because Alberta saw a substantial increase, while most other provinces either stayed the same or saw a decrease in emissions. &lt;/p&gt;
@@ -363,7 +366,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_52_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_55_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;From this representation, it's clear that Ontario and the rest of Canada have drastically different starting points&amp;mdash;quite contrary to what the chart from the budget would have you think!&lt;/p&gt;
 &lt;h2&gt;More line charts&lt;/h2&gt;
 &lt;p&gt;&lt;img src="images/aul-fakenews.jpeg" style="width: 600px;"&gt;  &lt;/p&gt;
@@ -454,7 +457,7 @@ $m_B = -153114.0$&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_62_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="png" src="images/blog-2-altair_65_2.png"&gt;&lt;/p&gt;
 &lt;p&gt;How this chart is better: &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
