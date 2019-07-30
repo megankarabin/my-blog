@@ -123,13 +123,13 @@ galaxies
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Lexical Attributes in spaCy&lt;/h3&gt;
 &lt;h5&gt;Mini linguistics refresher:&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;POS&lt;/strong&gt;: the syntactic category a word (or here, token) belongs to, e.g., noun, verb, adjective&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dependency&lt;/strong&gt;: the grammatical role of a word, relative to the other words in the sentence, e.g. direct/indirect object&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Head&lt;/strong&gt;: the lexical node (on a tree) that governs the word in question&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Lemma&lt;/strong&gt;: the base form of a word (its simplest morphological realization), e.g. "run" is the lemma for "running"&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Shape&lt;/strong&gt;: not linguistics-related per se, but this one is actually pretty cool &amp;mdash; the shape attribute shows you what the token "looks like" without showing you the token itself (is it a digit, does it contain capital letters, etc.). &lt;/p&gt;
-&lt;h3&gt;Lexical Attributes in spaCy&lt;/h3&gt;
 &lt;p&gt;The following are some useful and interesting token attributes.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;These return boolean values:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;is_alpha  (is it an alphanumeric character)
