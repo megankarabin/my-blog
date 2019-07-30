@@ -365,7 +365,7 @@ label_
 &lt;p&gt;Let's say we have a doc containing the string &lt;code&gt;"Hello world!"&lt;/code&gt; as well as &lt;code&gt;"it's nice to say hello"&lt;/code&gt;and we want to find all instances of &lt;code&gt;"hello"&lt;/code&gt; where it's followed by a noun, as well as also all instances where it's not.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://imgur.com/zYMm9ox.jpg" title="source: imgur.com" style='width:650px;' /&gt;&lt;/p&gt;
 &lt;p&gt;We can use the &lt;code&gt;OP&lt;/code&gt; attribute with the &lt;code&gt;*&lt;/code&gt; key to indicate that this token is optional (i.e., "find this element 0 or more times"). &lt;/p&gt;
-&lt;p&gt;(This step for this particular case is somewhat redundant, but I want to illustrate the optional feature in the simplest way possible.)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For this particular case, this step is somewhat redundant, but I want to illustrate the optional feature in the simplest way possible.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Some attributes for rule-based matching:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;            return bool:
 
