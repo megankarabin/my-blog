@@ -396,7 +396,7 @@ label_
 <p>...Looks like it didn't. "12 billion light" is also <strong>not</strong> money here.</p>
 <p>However, all is not lost! We can use a special feature called <strong>match patterns</strong>, along with manually adding this element to our list of entities, <code>doc.ents</code> (which we'll get to shortly), to set things straight.</p>
 <h2>Match Patterns</h2>
-<p><img src='newphone.jpg' style='width:250px;'> </p>
+<p><img src="https://i.imgur.com/OlxGPEH.jpg" title="source: imgur.com" style='width:400px;' /></p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy.matcher</span> <span class="kn">import</span> <span class="n">Matcher</span>
 
 <span class="c1"># initialize matcher using vocabulary shared with the nlp object </span>
@@ -415,7 +415,7 @@ label_
 
 <p>Each dictionary corresponds to exactly one token. If you have more than one dictionary, the list of dictionaries will correspond to a sequence of tokens appearing in that order (if that sequence exists in the doc).</p>
 <p>Let's say we have a doc containing the string <code>"Hello world!"</code> as well as <code>"it's nice to say hello"</code>and we want to find all instances of <code>"hello"</code> where it's followed by a noun, as well as also all instances where it's not.</p>
-<p><img src='match_pattern.png' style='width:500px;'></p>
+<p><img src="https://imgur.com/zYMm9ox.jpg" title="source: imgur.com" style='width:650px;' /></p>
 <p>We can use the <code>OP</code> attribute with the <code>*</code> key to indicate that this token is optional (i.e., "find this element 0 or more times"). </p>
 <p>(This step for this particular case is somewhat redundant, but I want to illustrate the optional feature in the simplest way possible.)</p>
 <p>Some attributes for rule-based matching:</p>
