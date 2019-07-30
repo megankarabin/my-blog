@@ -153,6 +153,7 @@ You can now load the model via spacy.load(&#39;en_core_web_sm&#39;)
 
 <h2>Tokens</h2>
 <p>Tokens are just another word for "item". In NLP, any individual, discrete object within the text (e.g., a word, punctuation mark, or number) would be a token. We can access individual tokens in a text by iterating over the doc object, and can thus see what types of tokens it contains, along with their lexical attributes.</p>
+<p><em>Lexical just means "relating to the words or vocabulary of a language", and so a "lexical attribute" is just some feature relating to the words/vocabulary of your doc.</em></p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
 </pre></div>
@@ -174,13 +175,23 @@ galaxies
 </pre></div>
 
 
+<h5>Mini linguistics refresher:</h5>
+<p><strong>POS</strong>: the syntactic category a word (or here, token) belongs to, e.g., noun, verb, adjective</p>
+<p><strong>Dependency</strong>: the grammatical role of a word, relative to the other words in the sentence, e.g. direct/indirect object</p>
+<p><strong>Head</strong>: the lexical node (on a tree) that governs the word in question</p>
+<p><strong>Lemma</strong>: the base form of a word (its simplest morphological realization), e.g. "run" is the lemma for "running"</p>
+<p><strong>Shape</strong>: not linguistics-related per se, but this one is actually pretty cool &mdash; the shape attribute shows you what the token "looks like" without showing you the token itself (is it a digit, does it contain capital letters, etc.). </p>
 <h3>Lexical Attributes in spaCy</h3>
-<p>Some useful and interesting token attributes are:</p>
-<div class="highlight"><pre><span></span>is_alpha
-is_punct
-like_num
+<p>The following are some useful and interesting token attributes.</p>
+<p><strong>These return boolean values:</strong></p>
+<div class="highlight"><pre><span></span>is_alpha  (is it an alphanumeric character)
+is_punct  (is it punctuation)
+like_num  (is it a number)
+</pre></div>
 
-i
+
+<p><strong>These return the index, the POS, the dependency, the lemma and the shape of a token, respectively:</strong></p>
+<div class="highlight"><pre><span></span>i
 pos_
 dep_
 head
@@ -189,13 +200,9 @@ shape_
 </pre></div>
 
 
-<p>For entities:</p>
-<div class="highlight"><pre><span></span>doc.ents
-label_
-</pre></div>
-
-
-<p>Below I'll run each of the token attributes in a list comprehension and toss those outputs into a dataframe, which now contains all the relevant lexical information we called on each of the tokens. </p>
+<h4>Additional Attributes</h4>
+<p>We can call <code>doc.ents</code> to get the entities and iterate over this to find the label (i.e., the category) for each entity (which we'll do in a minute) using the <code>label_</code> attribute.</p>
+<p>Below I'll run each of the attributes for every token using list comprehensions and toss those outputs into a dataframe, which will now contain all the relevant lexical information we gathered for each of the tokens. </p>
 <div class="highlight"><pre><span></span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
 <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">pos_</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
 <span class="n">dep</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span><span class="o">.</span><span class="n">dep_</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">]</span>
@@ -365,12 +372,6 @@ label_
 </table>
 </div>
 
-<h5>Mini linguistics refresher:</h5>
-<p><strong>POS</strong>: the syntactic category a word (or here, token) belongs to, e.g., noun, verb, adjective</p>
-<p><strong>Dependency</strong>: the grammatical role of a word, relative to the other words in the sentence, e.g. direct/indirect object</p>
-<p><strong>Head</strong>: the lexical node (on a tree) that governs the word in question</p>
-<p><strong>Lemma</strong>: the base form of a word (its simplest morphological realization), e.g. "run" is the lemma for "running"</p>
-<p><strong>Shape</strong>: not linguistics-related per se, but this one is actually pretty cool &mdash; the shape attribute shows you what the token "looks like" without showing you the token itself (is it a digit, does it contain capital letters, etc.). </p>
 <p>We can use <code>like_num</code> to find any numeric tokens in the text. This includes both digits and words for numbers. </p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">token</span><span class="o">.</span><span class="n">like_num</span><span class="p">:</span>
@@ -457,6 +458,7 @@ OP          IS_STOP
 </pre></div>
 
 
+<h3>Using Matcher: Overview</h3>
 <p><strong>Steps:</strong></p>
 <ol>
 <li>Import Matcher from <code>spacy.matcher</code></li>
@@ -475,7 +477,7 @@ OP          IS_STOP
 </ol>
 <h2>Hashing, vocab and string stores</h2>
 <p>The way we access the vocabulary in spaCy is through hash IDs and string stores. The vocabulary will depend on which package we passed into <code>spacy.load</code>, and will contain all the unique tokens within that package / dataset. </p>
-<p>spaCy stores tokens in the vocabulary as hashes, such that every identical token string will have the same hash ID(a unique numeric identifier). Hashes enable memory efficiency since this way, if an identical string occurs multiple times (e.g. the word "the"), it only needs to be stored once in the vocabulary (and not multiple times as a string). </p>
+<p>spaCy stores tokens in the vocabulary as hashes, such that every identical token string will have the same hash ID (a unique numeric identifier). Hashes enable memory efficiency since this way, if an identical string occurs multiple times (e.g. the word "the"), it only needs to be stored once in the vocabulary (and not multiple times as a string). </p>
 <p>Every hash corresponds to a string token, and every string will have a corresponding hash. You can use either one to look up the other, as long as that string is already in the vocabulary. </p>
 <p>If the word is new to the vocabulary, we must first hash it (as I'll show below). We can always get the hash of a word by looking up a string (if it's not already there, a new one will be generated), but if the word is new and doesn't yet have a hash, we can't search from hash ID to string (it won't exist!).</p>
 <div class="highlight"><pre><span></span><span class="c1"># reminder of the contents of our doc object</span>
@@ -554,6 +556,7 @@ KeyError: &quot;[E018] Can&#39;t retrieve string for hash &#39;4523523&#39;.&quo
 </pre></div>
 
 
+<p>Now we know the start and stop indices for our SpaceX entity. Let's do the same for "light years"</p>
 <div class="highlight"><pre><span></span><span class="n">matcher</span> <span class="o">=</span> <span class="n">Matcher</span><span class="p">(</span><span class="n">nlp</span><span class="o">.</span><span class="n">vocab</span><span class="p">)</span> 
 
 <span class="n">pattern</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;LIKE_NUM&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;LIKE_NUM&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;POS&#39;</span><span class="p">:</span> <span class="s1">&#39;ADJ&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;POS&#39;</span><span class="p">:</span> <span class="s1">&#39;NOUN&#39;</span><span class="p">}]</span>
@@ -568,6 +571,7 @@ KeyError: &quot;[E018] Can&#39;t retrieve string for hash &#39;4523523&#39;.&quo
 </pre></div>
 
 
+<p>Here I'm iterating over my matches to check that <code>matched_span</code> actually returns what we want it to return, which would indicate that the indices returned by the matcher are correct. </p>
 <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">match_id</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">stop</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
     <span class="n">matched_span</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="n">start</span><span class="o">+</span><span class="mi">2</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
     <span class="k">print</span><span class="p">(</span><span class="n">matched_span</span><span class="p">)</span>
@@ -578,6 +582,8 @@ KeyError: &quot;[E018] Can&#39;t retrieve string for hash &#39;4523523&#39;.&quo
 </pre></div>
 
 
+<p>Yep, good to go! </p>
+<p><strong>Note:</strong> <code>matched_span</code> originally returned the whole phrase, "12 billion light years" because of how I wrote the match pattern. I only want "light years" though, so I just added 2 to the start index, to effectively jump past the first two tokens of the match ("12 billion").</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">spacy.tokens</span> <span class="kn">import</span> <span class="n">Doc</span><span class="p">,</span> <span class="n">Span</span>
 
 <span class="c1"># using the start/stop indicies returned to us by the matcher</span>
