@@ -569,9 +569,11 @@ light years DIST
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;In &lt;code&gt;displacy.render&lt;/code&gt;, there are two style options: 
-- &lt;code&gt;dep&lt;/code&gt; returns a visualization of the syntactic dependencies (default)
-- &lt;code&gt;ent&lt;/code&gt; returns a prettified sentence which highlights the entities it contains. &lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;displacy.render&lt;/code&gt;, there are two style options: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dep&lt;/code&gt; returns a visualization of the syntactic dependencies (default)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ent&lt;/code&gt; returns a prettified sentence which highlights the entities it contains. &lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;For example: &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;dogs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cats&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ent&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;dogs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cats&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;dep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
