@@ -27,20 +27,20 @@
 
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Requirement already satisfied: spacy in /anaconda3/lib/python3.7/site-packages (2.1.6)
-Requirement already satisfied: numpy&amp;gt;=1.15.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.16.2)
 Requirement already satisfied: thinc&amp;lt;7.1.0,&amp;gt;=7.0.8 in /anaconda3/lib/python3.7/site-packages (from spacy) (7.0.8)
+Requirement already satisfied: numpy&amp;gt;=1.15.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.16.2)
 Requirement already satisfied: blis&amp;lt;0.3.0,&amp;gt;=0.2.2 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.2.4)
-Requirement already satisfied: requests&amp;lt;3.0.0,&amp;gt;=2.13.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.21.0)
 Requirement already satisfied: cymem&amp;lt;2.1.0,&amp;gt;=2.0.2 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.2)
-Requirement already satisfied: srsly&amp;lt;1.1.0,&amp;gt;=0.0.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.0.7)
+Requirement already satisfied: preshed&amp;lt;2.1.0,&amp;gt;=2.0.1 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.1)
+Requirement already satisfied: murmurhash&amp;lt;1.1.0,&amp;gt;=0.28.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.0.2)
 Requirement already satisfied: plac&amp;lt;1.0.0,&amp;gt;=0.9.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.9.6)
 Requirement already satisfied: wasabi&amp;lt;1.1.0,&amp;gt;=0.2.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.2.2)
-Requirement already satisfied: murmurhash&amp;lt;1.1.0,&amp;gt;=0.28.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.0.2)
-Requirement already satisfied: preshed&amp;lt;2.1.0,&amp;gt;=2.0.1 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.1)
+Requirement already satisfied: requests&amp;lt;3.0.0,&amp;gt;=2.13.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.21.0)
+Requirement already satisfied: srsly&amp;lt;1.1.0,&amp;gt;=0.0.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.0.7)
 Requirement already satisfied: tqdm&amp;lt;5.0.0,&amp;gt;=4.10.0 in /anaconda3/lib/python3.7/site-packages (from thinc&amp;lt;7.1.0,&amp;gt;=7.0.8-&amp;gt;spacy) (4.31.1)
-Requirement already satisfied: urllib3&amp;lt;1.25,&amp;gt;=1.21.1 in /anaconda3/lib/python3.7/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy) (1.24.1)
 Requirement already satisfied: certifi&amp;gt;=2017.4.17 in /anaconda3/lib/python3.7/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy) (2019.3.9)
 Requirement already satisfied: idna&amp;lt;2.9,&amp;gt;=2.5 in /anaconda3/lib/python3.7/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy) (2.8)
+Requirement already satisfied: urllib3&amp;lt;1.25,&amp;gt;=1.21.1 in /anaconda3/lib/python3.7/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy) (1.24.1)
 Requirement already satisfied: chardet&amp;lt;3.1.0,&amp;gt;=3.0.2 in /anaconda3/lib/python3.7/site-packages (from requests&amp;lt;3.0.0,&amp;gt;=2.13.0-&amp;gt;spacy) (3.0.4)
 Requirement already satisfied: en_core_web_sm==2.1.0 from https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm==2.1.0 in /anaconda3/lib/python3.7/site-packages (2.1.0)
 [38;5;2m✔ Download and installation successful[0m
@@ -468,7 +468,7 @@ doc.vocab.strings[hash]
 
 KeyError                                  Traceback (most recent call last)
 
-&amp;lt;ipython-input-20-4c77b5a5c88e&amp;gt; in &amp;lt;module&amp;gt;
+&amp;lt;ipython-input-17-4c77b5a5c88e&amp;gt; in &amp;lt;module&amp;gt;
       1 # this is what happens when you search for a hash that doesn&amp;#39;t correspond to any string in the vocab
 ----&amp;gt; 2 nlp.vocab.strings[4523523]
 
@@ -582,7 +582,6 @@ light years DIST
 &lt;/ul&gt;
 &lt;p&gt;For example: &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;dogs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cats&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ent&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;dogs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cats&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;dep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -600,7 +599,11 @@ light years DIST
 &lt;/mark&gt;
  loves cats.&lt;/div&gt;
 
-&lt;p&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="525819980ac04fa4b505ff735a09085b-0" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;dogs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cats&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;dep&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="f0a9f4d824dc4911be270a770109ced3-0" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr"&gt;
 &lt;text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5"&gt;
     &lt;tspan class="displacy-word" fill="currentColor" x="50"&gt;Megan&lt;/tspan&gt;
     &lt;tspan class="displacy-tag" dy="2em" fill="currentColor" x="50"&gt;PROPN&lt;/tspan&gt;
@@ -614,21 +617,21 @@ light years DIST
     &lt;tspan class="displacy-tag" dy="2em" fill="currentColor" x="400"&gt;NOUN&lt;/tspan&gt;
 &lt;/text&gt;&lt;/p&gt;
 &lt;p&gt;&lt;g class="displacy-arrow"&gt;
-    &lt;path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-0-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/&gt;
+    &lt;path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-0-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/&gt;
     &lt;text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px"&gt;
-        &lt;textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;nsubj&lt;/textPath&gt;
+        &lt;textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;nsubj&lt;/textPath&gt;
     &lt;/text&gt;
     &lt;path class="displacy-arrowhead" d="M70,91.5 L62,79.5 78,79.5" fill="currentColor"/&gt;
 &lt;/g&gt;&lt;/p&gt;
 &lt;p&gt;&lt;g class="displacy-arrow"&gt;
-    &lt;path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-0-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/&gt;
+    &lt;path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-0-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/&gt;
     &lt;text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px"&gt;
-        &lt;textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;dobj&lt;/textPath&gt;
+        &lt;textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;dobj&lt;/textPath&gt;
     &lt;/text&gt;
     &lt;path class="displacy-arrowhead" d="M400.0,91.5 L408.0,79.5 392.0,79.5" fill="currentColor"/&gt;
 &lt;/g&gt;
 &lt;/svg&gt;&lt;/p&gt;
-&lt;p&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="525819980ac04fa4b505ff735a09085b-1" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr"&gt;
+&lt;p&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="f0a9f4d824dc4911be270a770109ced3-1" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr"&gt;
 &lt;text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5"&gt;
     &lt;tspan class="displacy-word" fill="currentColor" x="50"&gt;Mary&lt;/tspan&gt;
     &lt;tspan class="displacy-tag" dy="2em" fill="currentColor" x="50"&gt;PROPN&lt;/tspan&gt;
@@ -642,20 +645,21 @@ light years DIST
     &lt;tspan class="displacy-tag" dy="2em" fill="currentColor" x="400"&gt;NOUN&lt;/tspan&gt;
 &lt;/text&gt;&lt;/p&gt;
 &lt;p&gt;&lt;g class="displacy-arrow"&gt;
-    &lt;path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-1-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/&gt;
+    &lt;path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-1-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/&gt;
     &lt;text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px"&gt;
-        &lt;textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-1-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;nsubj&lt;/textPath&gt;
+        &lt;textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-1-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;nsubj&lt;/textPath&gt;
     &lt;/text&gt;
     &lt;path class="displacy-arrowhead" d="M70,91.5 L62,79.5 78,79.5" fill="currentColor"/&gt;
 &lt;/g&gt;&lt;/p&gt;
 &lt;p&gt;&lt;g class="displacy-arrow"&gt;
-    &lt;path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-1-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/&gt;
+    &lt;path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-1-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/&gt;
     &lt;text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px"&gt;
-        &lt;textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-1-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;dobj&lt;/textPath&gt;
+        &lt;textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-1-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle"&gt;dobj&lt;/textPath&gt;
     &lt;/text&gt;
     &lt;path class="displacy-arrowhead" d="M400.0,91.5 L408.0,79.5 392.0,79.5" fill="currentColor"/&gt;
 &lt;/g&gt;
 &lt;/svg&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src='https://i.imgur.com/d5IHB64.png' style='width:400px;'&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;displacy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;render&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ent&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

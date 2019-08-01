@@ -79,20 +79,20 @@
 
 
 <div class="highlight"><pre><span></span>Requirement already satisfied: spacy in /anaconda3/lib/python3.7/site-packages (2.1.6)
-Requirement already satisfied: numpy&gt;=1.15.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.16.2)
 Requirement already satisfied: thinc&lt;7.1.0,&gt;=7.0.8 in /anaconda3/lib/python3.7/site-packages (from spacy) (7.0.8)
+Requirement already satisfied: numpy&gt;=1.15.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.16.2)
 Requirement already satisfied: blis&lt;0.3.0,&gt;=0.2.2 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.2.4)
-Requirement already satisfied: requests&lt;3.0.0,&gt;=2.13.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.21.0)
 Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.2)
-Requirement already satisfied: srsly&lt;1.1.0,&gt;=0.0.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.0.7)
+Requirement already satisfied: preshed&lt;2.1.0,&gt;=2.0.1 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.1)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.0.2)
 Requirement already satisfied: plac&lt;1.0.0,&gt;=0.9.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.9.6)
 Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.2.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.2.2)
-Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (1.0.2)
-Requirement already satisfied: preshed&lt;2.1.0,&gt;=2.0.1 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.0.1)
+Requirement already satisfied: requests&lt;3.0.0,&gt;=2.13.0 in /anaconda3/lib/python3.7/site-packages (from spacy) (2.21.0)
+Requirement already satisfied: srsly&lt;1.1.0,&gt;=0.0.6 in /anaconda3/lib/python3.7/site-packages (from spacy) (0.0.7)
 Requirement already satisfied: tqdm&lt;5.0.0,&gt;=4.10.0 in /anaconda3/lib/python3.7/site-packages (from thinc&lt;7.1.0,&gt;=7.0.8-&gt;spacy) (4.31.1)
-Requirement already satisfied: urllib3&lt;1.25,&gt;=1.21.1 in /anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (1.24.1)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (2019.3.9)
 Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in /anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (2.8)
+Requirement already satisfied: urllib3&lt;1.25,&gt;=1.21.1 in /anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (1.24.1)
 Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /anaconda3/lib/python3.7/site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (3.0.4)
 Requirement already satisfied: en_core_web_sm==2.1.0 from https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz#egg=en_core_web_sm==2.1.0 in /anaconda3/lib/python3.7/site-packages (2.1.0)
 [38;5;2m✔ Download and installation successful[0m
@@ -520,7 +520,7 @@ doc.vocab.strings[hash]
 
 KeyError                                  Traceback (most recent call last)
 
-&lt;ipython-input-20-4c77b5a5c88e&gt; in &lt;module&gt;
+&lt;ipython-input-17-4c77b5a5c88e&gt; in &lt;module&gt;
       1 # this is what happens when you search for a hash that doesn&#39;t correspond to any string in the vocab
 ----&gt; 2 nlp.vocab.strings[4523523]
 
@@ -634,7 +634,6 @@ light years DIST
 </ul>
 <p>For example: </p>
 <div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">([</span><span class="n">dogs</span><span class="p">,</span> <span class="n">cats</span><span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;ent&#39;</span><span class="p">)</span>
-<span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">([</span><span class="n">dogs</span><span class="p">,</span> <span class="n">cats</span><span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;dep&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -652,7 +651,11 @@ light years DIST
 </mark>
  loves cats.</div>
 
-<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="525819980ac04fa4b505ff735a09085b-0" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">([</span><span class="n">dogs</span><span class="p">,</span> <span class="n">cats</span><span class="p">],</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;dep&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="f0a9f4d824dc4911be270a770109ced3-0" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
 <text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5">
     <tspan class="displacy-word" fill="currentColor" x="50">Megan</tspan>
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
@@ -666,21 +669,21 @@ light years DIST
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">NOUN</tspan>
 </text></p>
 <p><g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-0-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-0-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+        <textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-0-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M70,91.5 L62,79.5 78,79.5" fill="currentColor"/>
 </g></p>
 <p><g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-0-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-0-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
+        <textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-0-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M400.0,91.5 L408.0,79.5 392.0,79.5" fill="currentColor"/>
 </g>
 </svg></p>
-<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="525819980ac04fa4b505ff735a09085b-1" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
+<p><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:lang="en" id="f0a9f4d824dc4911be270a770109ced3-1" class="displacy" width="575" height="224.5" direction="ltr" style="max-width: none; height: 224.5px; color: #000000; background: #ffffff; font-family: Arial; direction: ltr">
 <text class="displacy-token" fill="currentColor" text-anchor="middle" y="134.5">
     <tspan class="displacy-word" fill="currentColor" x="50">Mary</tspan>
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="50">PROPN</tspan>
@@ -694,20 +697,21 @@ light years DIST
     <tspan class="displacy-tag" dy="2em" fill="currentColor" x="400">NOUN</tspan>
 </text></p>
 <p><g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-1-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-1-0" stroke-width="2px" d="M70,89.5 C70,2.0 225.0,2.0 225.0,89.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-1-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
+        <textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-1-0" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">nsubj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M70,91.5 L62,79.5 78,79.5" fill="currentColor"/>
 </g></p>
 <p><g class="displacy-arrow">
-    <path class="displacy-arc" id="arrow-525819980ac04fa4b505ff735a09085b-1-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/>
+    <path class="displacy-arc" id="arrow-f0a9f4d824dc4911be270a770109ced3-1-1" stroke-width="2px" d="M245,89.5 C245,2.0 400.0,2.0 400.0,89.5" fill="none" stroke="currentColor"/>
     <text dy="1.25em" style="font-size: 0.8em; letter-spacing: 1px">
-        <textPath xlink:href="#arrow-525819980ac04fa4b505ff735a09085b-1-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
+        <textPath xlink:href="#arrow-f0a9f4d824dc4911be270a770109ced3-1-1" class="displacy-label" startOffset="50%" side="left" fill="currentColor" text-anchor="middle">dobj</textPath>
     </text>
     <path class="displacy-arrowhead" d="M400.0,91.5 L408.0,79.5 392.0,79.5" fill="currentColor"/>
 </g>
 </svg></p>
+<p><img src='https://i.imgur.com/d5IHB64.png' style='width:400px;'></p>
 <div class="highlight"><pre><span></span><span class="n">displacy</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;ent&#39;</span><span class="p">)</span>
 </pre></div>
 
