@@ -697,7 +697,7 @@ displacy.render(doc, style=&amp;#39;dep&amp;#39;, options=options)
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img src='https://i.imgur.com/6aV8j93.png' style='width:900px;'&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src='https://i.imgur.com/6aV8j93.png' style='width:1100px;'&gt;&lt;/p&gt;
 &lt;h3&gt;One last thing...&lt;/h3&gt;
 &lt;h3&gt;&lt;code&gt;spacy.explain&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;This method is super great when dealing with abbreviations and shorthands, which tend to be ubiquitous in a package filled with descriptors like "adverbial clause modifier". Not exactly compact. From time to time, we might encounter an abbreviation/label we're unfamiliar with, and in such cases we can call &lt;code&gt;spacy.explain&lt;/code&gt;, which &lt;strong&gt;takes any spaCy abbreviation, shorthand or label as a string argument and returns the full name.&lt;/strong&gt; Check it out:&lt;/p&gt;
